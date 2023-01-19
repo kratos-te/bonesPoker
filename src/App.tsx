@@ -139,6 +139,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
+      {/* Css base line */}
       <CssBaseline />
       {layout === "dashboard" && (
         <>
