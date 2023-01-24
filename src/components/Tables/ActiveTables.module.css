@@ -1,0 +1,59 @@
+.container {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+}
+
+.thead {
+    height: 60px;
+    background: #CFA8FF;
+}
+
+.thead th, .tbody td {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.tbody tr:nth-child(2n) {
+    background: #161616;
+    height: 60px;
+    color: white;
+}
+
+.tbody tr:nth-child(2n-1) {
+    background: #323232;
+    height: 60px;
+    color: white;
+}
+
+.joinBtn {
+    color: black;
+    background: #93FF9E;
+    padding: 0 40px;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.loadingBtn {
+    color: black;
+    background: #FFD793;
+    padding: 0 40px;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        display: none;
+    }
+}

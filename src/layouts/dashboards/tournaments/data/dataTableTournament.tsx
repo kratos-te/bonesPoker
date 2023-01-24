@@ -20,7 +20,7 @@ import Icon from "@mui/material/Icon";
 import DefaultCell from "../components/DefaultCell";
 import StatusCell from "../components/StatusCell";
 
-const dataTableTournament = {
+const DATA_TABLE_TOURNAMENT_GAMES = {
   columns: [
     {
       Header: "🃏 tournament",
@@ -63,71 +63,71 @@ const dataTableTournament = {
     },
   ],
 
-  rows: [
-    {
-      tournament: "🃏 BV Free Roller",
-      buyin: "💵 FR Ticket",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: "123",
-      start: "⏱️ 5 min",
-    },
-    {
-      tournament: "🃏 Jelly Special",
-      buyin: "💵 25 $JELLY",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: "97",
-      start: "⏱️ 24 min",
-    },
-    {
-      tournament: "🃏 Monday Turbo",
-      buyin: "💵 0.2 $SOL",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: "44",
-      start: "⏱️ 28 min",
-    },
-    {
-      tournament: "🃏 BV Free Roller",
-      buyin: "💵 FR Ticket",
-      status: "free",
-      stack: "💰 1,500",
-      blinds: "50/100",
-      registered: "35",
-      start: "⏱️ 33 min",
-    },
-    {
-      tournament: "🃏 Get $Bonkers",
-      buyin: "💵 5,000 $BONK",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: "76",
-      start: "⏱️ 38 min",
-    },
-    {
-      tournament: "🃏 High Roller Club",
-      buyin: "💵 5 $SOL",
-      status: "free",
-      stack: "💰 500",
-      blinds: "10/20",
-      registered: "64",
-      start: "⏱️ 45 min",
-    },
-    {
-      tournament: "🃏 Breadcrumbs",
-      buyin: "💵 0.1 $SOL",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: "34",
-      start: "⏱️ 50 min",
-    },
-  ],
+  // rows: [
+  //   {
+  //     tournament: "🃏 BV Free Roller",
+  //     buyin: "💵 FR Ticket",
+  //     status: "free",
+  //     stack: "💰 1,000",
+  //     blinds: "25/50",
+  //     registered: "123",
+  //     start: "⏱️ 5 min",
+  //   },
+  //   {
+  //     tournament: "🃏 Jelly Special",
+  //     buyin: "💵 25 $JELLY",
+  //     status: "free",
+  //     stack: "💰 1,000",
+  //     blinds: "25/50",
+  //     registered: "97",
+  //     start: "⏱️ 24 min",
+  //   },
+  //   {
+  //     tournament: "🃏 Monday Turbo",
+  //     buyin: "💵 0.2 $SOL",
+  //     status: "free",
+  //     stack: "💰 1,000",
+  //     blinds: "25/50",
+  //     registered: "44",
+  //     start: "⏱️ 28 min",
+  //   },
+  //   {
+  //     tournament: "🃏 BV Free Roller",
+  //     buyin: "💵 FR Ticket",
+  //     status: "free",
+  //     stack: "💰 1,500",
+  //     blinds: "50/100",
+  //     registered: "35",
+  //     start: "⏱️ 33 min",
+  //   },
+  //   {
+  //     tournament: "🃏 Get $Bonkers",
+  //     buyin: "💵 5,000 $BONK",
+  //     status: "free",
+  //     stack: "💰 1,000",
+  //     blinds: "25/50",
+  //     registered: "76",
+  //     start: "⏱️ 38 min",
+  //   },
+  //   {
+  //     tournament: "🃏 High Roller Club",
+  //     buyin: "💵 5 $SOL",
+  //     status: "free",
+  //     stack: "💰 500",
+  //     blinds: "10/20",
+  //     registered: "64",
+  //     start: "⏱️ 45 min",
+  //   },
+  //   {
+  //     tournament: "🃏 Breadcrumbs",
+  //     buyin: "💵 0.1 $SOL",
+  //     status: "free",
+  //     stack: "💰 1,000",
+  //     blinds: "25/50",
+  //     registered: "34",
+  //     start: "⏱️ 50 min",
+  //   },
+  // ],
 };
 
-export default dataTableTournament;
+export default DATA_TABLE_TOURNAMENT_GAMES;

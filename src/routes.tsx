@@ -48,12 +48,16 @@ import TournamentOverview from "layouts/dashboards/tournaments";
 import Leaderboards from "layouts/dashboards/leaderboards";
 import Tables from "layouts/dashboards/tables";
 import Twitter from "@mui/icons-material/Twitter";
+import HomeIcon from "@mui/icons-material/Home";
+import PersonIcon from "@mui/icons-material/Person";
 import { FaDiscord } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import Basic from "layouts/authentication/sign-in";
 import Start from "layouts/authentication/starting-board";
 import { BsSuitSpadeFill, BsSuitClubFill } from "react-icons/bs";
 import MyProfile from "layouts/authentication/my-profile";
+
+import Leaderboard from "components/Leaderbaord/Leaderboard";
 
 //set routes here
 
@@ -68,7 +72,7 @@ const routes = [
     type: "collapse",
     name: "Home",
     key: "home",
-    icon: <Icon fontSize="medium">home</Icon>,
+    icon: <HomeIcon fontSize="medium" />,
     noCollapse: true,
     route: "/home",
     component: <Start />,
@@ -105,7 +109,7 @@ const routes = [
     type: "collapse",
     name: "My Profile",
     key: "myprofile",
-    icon: <Icon fontSize="medium">person</Icon>,
+    icon: <PersonIcon fontSize="medium" />,
     noCollapse: true,
     route: "/myprofile",
     component: <MyProfile />,

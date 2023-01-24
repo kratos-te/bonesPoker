@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Grid } from "@mui/material";
 import MDBox from "components/MDBox";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
@@ -10,7 +11,7 @@ function PrizeWidget(): JSX.Element {
           <ComplexStatisticsCard
             color="dark"
             icon="redeem"
-            title="Daily Prize"
+            title="Daily Ranking"
             count={"3 $SOL"}
             percentage={{
               color: "success",
@@ -24,7 +25,7 @@ function PrizeWidget(): JSX.Element {
         <MDBox mb={1.5}>
           <ComplexStatisticsCard
             icon="redeem"
-            title="Monthly Prize"
+            title="Monthly Ranking"
             count="140 $SOL"
             percentage={{
               color: "success",

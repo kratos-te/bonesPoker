@@ -19,34 +19,54 @@ Coded by www.creative-tim.com
 import DefaultCell from "../components/DefaultCell";
 import StatusCell from "../components/StatusCell";
 import GameCell from "../components/GameCell";
+import { useGame } from "context/GameProvider";
 
-const dataTableActivegames = {
+// const DataTableActivegames = {
+const DATA_TABLE_ACTIVE_GAMES = {
   columns: [
     {
-      Header: "🃏 Active Games",
-      accessor: "activegames",
+      Header: "🃏 name",
+      accessor: "name",
       width: "25%",
       Cell: ({ value }: any) => <GameCell value={value} />,
     },
     {
-      Header: "💵 buyin",
-      accessor: "buyin",
+      Header: "💵 amount",
+      accessor: "amount",
       width: "15%",
       Cell: ({ value }: any) => <DefaultCell value={value} />,
     },
     {
-      Header: "👨‍👦‍👦 registered",
-      accessor: "registered",
+      Header: "💵 stack",
+      accessor: "stack",
+      width: "15%",
+      Cell: ({ value }: any) => <DefaultCell value={value} />,
+    },
+    {
+      Header: "💵 blinds",
+      accessor: "blinds",
+      width: "15%",
+      Cell: ({ value }: any) => <DefaultCell value={value} />,
+    },
+    {
+      Header: "💵 token",
+      accessor: "token",
+      width: "15%",
+      Cell: ({ value }: any) => <DefaultCell value={value} />,
+    },
+    {
+      Header: "👨‍👦‍👦 player",
+      accessor: "player",
       width: "20%",
       align: "center",
       Cell: ({ value }: any) => <DefaultCell value={value} />,
     },
-    {
-      Header: "⏱️ starts in",
-      accessor: "start",
-      width: "15%",
-      Cell: ({ value }: any) => <DefaultCell value={value} />,
-    },
+    // {
+    //   Header: "⏱️ starts in",
+    //   accessor: "start",
+    //   width: "15%",
+    //   Cell: ({ value }: any) => <DefaultCell value={value} />,
+    // },
     {
       Header: "status",
       accessor: "status",
@@ -56,44 +76,53 @@ const dataTableActivegames = {
     },
   ],
 
-  rows: [
-    {
-      activegames: "🃏 Bone Voyage Free Roller",
-      buyin: "💵 FR Ticket",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: " 123",
-      start: "✔️ started",
-    },
-    {
-      activegames: "🃏 Jelly Special",
-      buyin: "💵 25 $JELLY",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: " 97",
-      start: "✔️ started",
-    },
-    {
-      activegames: "🃏 Monday Turbo",
-      buyin: "💵 0.2 $SOL",
-      status: "free",
-      stack: "💰 1,000",
-      blinds: "25/50",
-      registered: " 44",
-      start: "✔️ started",
-    },
-    {
-      activegames: "🃏 Bone Voyage Free Roller",
-      buyin: "💵 FR Ticket",
-      status: "free",
-      stack: "💰 1,500",
-      blinds: "50/100",
-      registered: " 35",
-      start: "⏱️ 33 min",
-    },
-  ],
+  // rows: {
+  //   name: string,
+  //   amount: Number,
+  //   token: Number,
+  //   stack: Number,
+  //   blinds: Number,
+  //   player: Number,
+  //   status: Function,
+  // },
 };
+// [
+//   {
+//     activegames: "🃏 Bone Voyage Free Roller",
+//     buyin: "💵 FR Ticket",
+//     status: "free",
+//     stack: "💰 1,000",
+//     blinds: "25/50",
+//     registered: " 123",
+//     start: "✔️ started",
+//   },
+//   {
+//     activegames: "🃏 Jelly Special",
+//     buyin: "💵 25 $JELLY",
+//     status: "free",
+//     stack: "💰 1,000",
+//     blinds: "25/50",
+//     registered: " 97",
+//     start: "✔️ started",
+//   },
+//   {
+//     activegames: "🃏 Monday Turbo",
+//     buyin: "💵 0.2 $SOL",
+//     status: "free",
+//     stack: "💰 1,000",
+//     blinds: "25/50",
+//     registered: " 44",
+//     start: "✔️ started",
+//   },
+//   {
+//     activegames: "🃏 Bone Voyage Free Roller",
+//     buyin: "💵 FR Ticket",
+//     status: "free",
+//     stack: "💰 1,500",
+//     blinds: "50/100",
+//     registered: " 35",
+//     start: "⏱️ 33 min",
+//   },
+// ],
 
-export default dataTableActivegames;
+export default DATA_TABLE_ACTIVE_GAMES;

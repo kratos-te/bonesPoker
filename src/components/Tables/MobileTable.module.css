@@ -1,0 +1,137 @@
+.container {
+    display: none;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #93ff9e;
+    border-radius: 10px;
+    background: black;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.tableInfoContent {
+    display: flex;
+}
+
+.avatarContainer {
+    width: 172px;
+    /* min-width: 120px; */
+    
+}
+
+.tableInfo {
+    width: calc(100% - 172px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.tableTitle {
+    color: white;
+    margin-top: 25px;
+    padding-left: 50px;
+}
+
+.tableDetailInfoPanel {
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; */
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    margin: 0 25px 25px;
+    grid-gap: 20px;
+
+}
+
+.tableDetailInfoPanel > span{
+    width: calc(50% - 10px);
+}
+
+.tableAvatar {
+    aspect-ratio: 1;
+    height: 100%;
+}
+
+.tableInfoFooter {
+    width: 100%;
+    background: #93ff9e;
+    color: black;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.iconWrapper {
+    margin-right: 20px;
+}
+
+
+.bgYellow1 {
+    background: #ffd793;
+}
+.borderYellow1 {
+    border-color: #ffd793;
+}
+@media (max-width: 1000px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .iconWrapper {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .avatarContainer {
+        width: 30%;   
+    }
+
+    .tableInfo {
+        width: 70%;
+    }
+
+    .tableAvatar {
+        width: 100%;
+        height: auto;
+    }
+
+    .tableTitle {
+        margin-top: 0;
+    }
+    .tableDetailInfoPanel {
+        margin: 0;
+        grid-gap: 5px;
+    }
+    .tableDetailInfoPanel > span {
+        width: calc(50% - 3px);
+        display: flex;
+        align-items: center;
+    }
+    .tableTitle {
+        padding-left: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .iconWrapper {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 365px) {
+    .avatarContainer {
+        display: none;
+    }
+
+    .tableInfo {
+        width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+.container{
+
+}
+
+.content {
+    padding-top: 98px;
+    display: flex;
+}
+
+.mainContent {
+    width: calc(100% - 200px);
+    padding: 0 80px;
+    height: calc(100vh - 98px);
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+
+.mainContent::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+@media (max-width: 1000px) { 
+    .sidebarContent {
+        display: none;
+    }
+
+    .content {
+        padding-top: 60px;
+        background: url('/img/bg.png');
+
+    }
+
+    .mainContent {
+        width: 100%;
+        padding: 0 10px;
+        height: auto;
+        min-height: calc(100vh - 60px);
+        padding-top: 10px;
+    }
+}

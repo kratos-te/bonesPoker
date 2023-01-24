@@ -41,16 +41,18 @@ import userData from "layouts/authentication/userData";
 
 // Images
 import { Card } from "@mui/material";
+import { useGame } from "context/GameProvider";
 
 function ProfileCard(): JSX.Element {
+  const { userName, userPfp, userAddress } = useGame();
   return (
     <Grid container spacing={1}>
       <Grid item xs={12} md={6} xl={12} sx={{ display: "flex" }}>
         <Card id="basic-info" sx={{ overflow: "visible" }}>
           <ProfileInfoCard
-            title={userData.user1.name}
+            title={userName}
             description={userData.user1.description}
-            wallet={userData.user1.wallet}
+            wallet={userAddress}
             discord={userData.user1.discord}
             level={userData.user1.level}
             social={[

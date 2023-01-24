@@ -1,0 +1,32 @@
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.label {
+    width: 100px;
+    text-align: center;
+}
+
+.inputWrapper {
+    width: calc(100% - 100px);
+}
+.input {
+    width: 100%;
+    border: 1px solid green;
+    background: transparent;
+    color: white;
+}
+
+.btn{
+    padding: 5px 10px;
+    color: black;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.bgGreen {
+    background: green;
+}

@@ -43,6 +43,7 @@ import TournamentTable from "layouts/dashboards/tournaments/components/Tournamen
 import ProfileOverview from "../PorilfeOverview";
 import Settings from "../Settings";
 import ProfileCard from "examples/ProfileCard";
+import { useGame } from "context/GameProvider";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -108,6 +109,7 @@ function HeaderProfile({ children }: { children?: ReactNode }): JSX.Element {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const { userName, userPfp, userAddress } = useGame();
 
   return (
     <MDBox position="relative" mb={5}>
@@ -139,17 +141,12 @@ function HeaderProfile({ children }: { children?: ReactNode }): JSX.Element {
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <MDAvatar
-              src={"https://i.ibb.co/LYFKDny/hangry.png"}
-              alt="profile-image"
-              size="xl"
-              shadow="sm"
-            />
+            <MDAvatar src={userPfp} alt="profile-image" size="xl" shadow="sm" />
           </Grid>
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Daddy
+                {userName}
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="regular">
                 Bones DAO
