@@ -23,14 +23,156 @@ import MDBox from "components/MDBox";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
+import { useEffect, useState } from "react";
 import dataTableTable from "../../data/dataTableTables";
 
-function TableTable(): JSX.Element {
+import { useRouter } from "next/router";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useSocket } from "context/SocketProvider";
+import { errorAlert } from "components/toastGroup";
+import { ActiveGame } from "types/Game";
+import { useGame } from "context/GameProvider";
+import { TemplateTable } from "types/TemplateTable";
+import { enterTableOnChain } from "context/scripts";
+import MobileTable from "components/Tables/MobileTable";
+import ActiveTables from "components/Tables/ActiveTables";
+import DATA_TABLE_TABLES_GAMES from "../../data/dataTableTables";
+
+interface TableGamesTemplate {
+  tablegame: string;
+  buyin: string;
+  stack: string;
+  blinds: string;
+  registered: string;
+  start: string;
+  status: string;
+}
+
+const TableTable = () => {
+  const {
+    setMyPlayerId,
+    setChat,
+    startGameStartCountdown,
+    startCountdown,
+    setGameStarted,
+    setIsCountDown,
+    gameStartCountdownIntervalHandler,
+    countdownInteralHandler,
+  } = useGame();
+  const wallet = useWallet();
+  const { socket } = useSocket();
+  const router = useRouter();
+  const [tables, setTables] = useState<TemplateTable[]>([]);
+  const [menu, setMenu] = useState("existing");
+  const [gamelist, setGamelist] = useState<TableGamesTemplate[]>([]);
+  const [buyInFilter, setBuyInFilter] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [afkGamelist, setAfkGamelist] = useState<ActiveGame[]>([]);
+
+  const handleCreateGame = (tableId: string) => {
+    socket?.emit("createGame", tableId, (gameId) => {
+      router.push(`/table/${gameId}`);
+    });
+  };
+
+  const handleJoinGame = async (
+    gameId: string,
+    buyIn: number,
+    initialStack: number,
+    minBet: number,
+    numSeat: number,
+    count: number
+  ) => {
+    if (!wallet || !wallet.connected || !wallet.publicKey) {
+      errorAlert("Plz connect wallet first");
+      return;
+    }
+
+    if (!socket) {
+      errorAlert("Socket disconnected, Plz check your network");
+      return;
+    }
+
+    socket.emit("isSitOnGame", gameId, wallet.publicKey.toBase58(), async (resultFlag: boolean) => {
+      console.log("player trying to sit...", gameId, wallet?.publicKey?.toBase58());
+      if (resultFlag) {
+        errorAlert("Already Entered The Game");
+        return;
+      } else {
+        if (!wallet || !wallet.publicKey) {
+          errorAlert("Plz connect wallet first");
+          return;
+        }
+        let result = await enterTableOnChain(wallet, initialStack, buyIn, minBet, numSeat);
+        console.log(result);
+        if (result.result == 0 && result.txId) {
+          if (gameStartCountdownIntervalHandler) clearInterval(gameStartCountdownIntervalHandler);
+          if (countdownInteralHandler) clearInterval(countdownInteralHandler);
+          socket.emit(
+            "sitOnGame",
+            gameId,
+            result.txId,
+            wallet.publicKey.toBase58(),
+            (playerId: string | null, gameStartedTmp?: boolean) => {
+              if (playerId) {
+                setMyPlayerId(playerId);
+                console.log("my player ID is ", playerId);
+                setChat([]);
+                router.push(`/table/${gameId}`);
+
+                setIsCountDown(true);
+                if (gameStartedTmp) {
+                  // setGameStarted(true);
+                  startCountdown();
+                } else {
+                  startGameStartCountdown();
+                }
+                // if (count == numSeat - 1) {
+                // } else {
+                // }
+              } else {
+                errorAlert("Join Table Failed!");
+              }
+            }
+          );
+        } else {
+          errorAlert("Join Table Failed!");
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (!socket) return;
+    socket.emit("getExistingGames", (activeGameList: ActiveGame[]) => {
+      if (activeGameList && activeGameList.length > 0)
+        // eslint-disable-next-line prettier/prettier
+        setGamelist((activeGameList as unknown) as TableGamesTemplate[]);
+    });
+    socket.emit("listTables", (tables: TemplateTable[]) => {
+      setTables(tables);
+    });
+
+    socket.on("activeGameUpdated", (existingGames) => {
+      if (existingGames && existingGames.length > 0)
+        // eslint-disable-next-line prettier/prettier
+        setGamelist((existingGames as unknown) as TableGamesTemplate[]);
+    });
+  }, [socket]);
   return (
     <MDBox my={3}>
-      <DataTable table={dataTableTable} entriesPerPage={false} />
+      {/* <ActiveTables afkGamelist={afkGamelist} setLoading={setLoading} loading={loading} /> */}
+      <DataTable
+        tableColumns={DATA_TABLE_TABLES_GAMES.columns}
+        tableRows={gamelist}
+        entriesPerPage={false}
+        buyInFilter={buyInFilter}
+        setLoading={setLoading}
+        loading={loading}
+      />
+      <MobileTable setLoading={setLoading} loading={loading} showAll={true} />
     </MDBox>
   );
-}
+};
 
 export default TableTable;

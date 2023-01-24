@@ -49,6 +49,9 @@ import {
   setMiniSidenav,
   setOpenConfigurator,
 } from "context";
+import MenuIcon from "@mui/icons-material/Menu";
+import { CustomWalletMultiButton } from "../CustomWalletMultiButton";
+import { CustomWalletConnectButton } from "../CustomWalletConnectButton";
 
 // Declaring prop types for DashboardNavbar
 interface Props {
@@ -147,21 +150,23 @@ function DashboardNavbar({ absolute, light, isMini }: Props): JSX.Element {
       <Toolbar sx={navbarContainer}>
         <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
           <IconButton sx={navbarDesktopMenu} onClick={handleMiniSidenav} size="small" disableRipple>
-            <Icon fontSize="medium" sx={iconsStyle}>
+            <MenuIcon fontSize="medium" sx={iconsStyle}>
               {miniSidenav ? "menu_open" : "menu"}
-            </Icon>
+            </MenuIcon>
           </IconButton>
         </MDBox>
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
             <MDBox pr={1}></MDBox>
             <MDBox color={light ? "white" : "inherit"}>
-              <Link to="/myprofile">
+              {/* <Link to="/myprofile">
                 <IconButton sx={navbarIconButton} size="small" disableRipple>
                   <Icon sx={iconsStyle}>account_circle</Icon>
                 </IconButton>
-              </Link>
-              <IconButton
+              </Link> */}
+
+              <CustomWalletMultiButton />
+              {/* <IconButton
                 size="small"
                 disableRipple
                 color="inherit"
@@ -190,7 +195,7 @@ function DashboardNavbar({ absolute, light, isMini }: Props): JSX.Element {
                 <MDBadge badgeContent={9} color="success" size="xs" circular>
                   <Icon sx={iconsStyle}>notifications</Icon>
                 </MDBadge>
-              </IconButton>
+              </IconButton> */}
               {renderMenu()}
             </MDBox>
           </MDBox>

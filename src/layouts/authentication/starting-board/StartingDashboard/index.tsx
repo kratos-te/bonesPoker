@@ -38,6 +38,8 @@ import ActiveGamesTable from "layouts/dashboards/activegames/components/ActiveGa
 import TableTable from "layouts/dashboards/tables/components/TableTable";
 import TournamentTable from "layouts/dashboards/tournaments/components/TournamentTable";
 import { BsSuitSpadeFill, BsSuitClubFill, BsSuitDiamondFill } from "react-icons/bs";
+import HeroSection from "layouts/authentication/components/HeroSection/HeroSection";
+import { useGame } from "context/GameProvider";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -78,6 +80,7 @@ function a11yProps(index: number) {
 function StartingDashboard({ children }: { children?: ReactNode }): JSX.Element {
   const [tabsOrientation, setTabsOrientation] = useState<"horizontal" | "vertical">("horizontal");
 
+  const { userName, userPfp } = useGame();
   useEffect(() => {
     // A function that sets the orientation state of the tabs.
     function handleTabsOrientation() {
@@ -134,23 +137,19 @@ function StartingDashboard({ children }: { children?: ReactNode }): JSX.Element 
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <MDAvatar
-              src={"https://i.ibb.co/LYFKDny/hangry.png"}
-              alt="profile-image"
-              size="xl"
-              shadow="sm"
-            />
+            <MDAvatar src={userPfp} alt="profile-image" size="xl" shadow="sm" />
           </Grid>
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Welcome back {userData.user1.name}!
+                Welcome back {userName}!
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="regular">
                 Have fun playing
               </MDTypography>
             </MDBox>
           </Grid>
+          {/* <HeroSection /> */}
           <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
             <AppBar position="static">
               <Tabs orientation={tabsOrientation} value={value} onChange={handleChange}>

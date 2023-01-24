@@ -1,0 +1,35 @@
+.logoWrapper {
+    position: relative;
+    cursor: pointer;
+    width: 74px;
+    height: 89px;
+    margin: 20px auto auto;
+}
+
+.logoImg {
+    width: 100%; 
+}
+   
+.title {
+    font-family: roboto;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text {
+    font-family: roboto;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 1400px) {
+    .logoWrapper { 
+
+        width: 44px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,30 @@
+.container {
+    width: calc(50% - 15px);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #27293D;
+    color: white;
+    max-height: calc(100vh - 140px);
+}
+
+.title {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.row {
+    border-bottom: 1px solid #343649;
+    height: 40px;
+    font-size: 12px;
+}
+
+.row>th {
+    text-transform: uppercase;
+}
+
+.row a {
+    color: #AA4EEB !important;
+    text-decoration: none !important;
+}

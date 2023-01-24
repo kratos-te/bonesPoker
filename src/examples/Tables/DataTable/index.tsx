@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
 =========================================================
 * Material Dashboard 2 PRO React TS - v1.0.1
@@ -13,7 +14,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useMemo, useEffect, useState } from "react";
+import { FC, useMemo, useEffect, useState } from "react";
 
 // react-table components
 import { useTable, usePagination, useGlobalFilter, useAsyncDebounce, useSortBy } from "react-table";
@@ -35,9 +36,10 @@ import MDPagination from "components/MDPagination";
 // Material Dashboard 2 PRO React TS examples components
 import DataTableHeadCell from "examples/Tables/DataTable/DataTableHeadCell";
 import DataTableBodyCell from "examples/Tables/DataTable/DataTableBodyCell";
+import { ActiveGame } from "types/Game";
 
 // Declaring props types for DataTable
-interface Props {
+interface ActiveTablesProps {
   entriesPerPage?:
     | false
     | {
@@ -46,27 +48,40 @@ interface Props {
       };
   canSearch?: boolean;
   showTotalEntries?: boolean;
-  table: {
-    columns: { [key: string]: any }[];
-    rows: { [key: string]: any }[];
-  };
+  // columns: { [key: string]: any }[];
+  tableColumns: any;
+  tableRows: any[]; //{ [key: string]: any }[];
+  // table: {
+  //   columns: { [key: string]: any }[];
+  //   rows: { [key: string]: any }[];
+  // };
   pagination?: {
     variant: "contained" | "gradient";
     color: "primary" | "secondary" | "info" | "success" | "warning" | "error" | "dark" | "light";
   };
   isSorted?: boolean;
   noEndBorder?: boolean;
+  buyInFilter?: number;
+  setLoading: Function;
+  loading: boolean;
+  afkGamelist?: ActiveGame[];
 }
 
-function DataTable({
+// table,
+const DataTable: FC<ActiveTablesProps> = ({
   entriesPerPage,
   canSearch,
   showTotalEntries,
-  table,
+  tableColumns,
+  tableRows,
   pagination,
   isSorted,
   noEndBorder,
-}: Props): JSX.Element {
+  buyInFilter,
+  setLoading,
+  loading,
+  afkGamelist,
+}) => {
   let defaultValue: any;
   let entries: any[];
 
@@ -75,11 +90,15 @@ function DataTable({
     entries = entriesPerPage.entries ? entriesPerPage.entries : ["10", "25", "50", "100"];
   }
 
-  const columns = useMemo<any>(() => table.columns, [table]);
-  const data = useMemo<any>(() => table.rows, [table]);
+  // const columns = useMemo<any>(() => table.columns, [table]);
+  // const data = useMemo<any>(() => table.rows, [table]);
 
   const tableInstance = useTable(
-    { columns, data, initialState: { pageIndex: 0 } },
+    {
+      columns: tableColumns,
+      data: tableRows,
+      initialState: { pageIndex: 0 },
+    },
     useGlobalFilter,
     useSortBy,
     usePagination
@@ -295,11 +314,11 @@ function DataTable({
       </MDBox>
     </TableContainer>
   );
-}
+};
 
 // Declaring default props for DataTable
 DataTable.defaultProps = {
-  entriesPerPage: { defaultValue: 10, entries: ["5", "10", "15", "20", "25"] },
+  entriesPerPage: { defaultValue: 10, entries: [5, 10, 15, 20, 25] },
   canSearch: false,
   showTotalEntries: true,
   pagination: { variant: "gradient", color: "warning" },

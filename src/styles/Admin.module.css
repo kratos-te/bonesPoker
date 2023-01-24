@@ -1,0 +1,146 @@
+.container {
+  padding: 0;
+}
+
+.main {
+  height: 100vh;
+  padding: 10rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title span {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.chooseTable {
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.selectedTable {
+  font-size: 2em;
+  cursor: pointer;
+  border: 1px dashed black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 0.25rem;
+  color: white;
+}
+
+.selectedTable:hover {
+  color: #0070f3;
+}
+
+.tableList {
+  display: list-item;
+  border: 1px dashed black;
+  border-radius: 0.5rem;
+}
+
+.menu {
+  cursor: pointer;
+  margin: 0 20px;
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+.menu:hover { 
+  border-bottom: 5px solid green;
+}
+
+.menuActive {
+  border-bottom: 5px solid blue;
+  font-weight: 900;
+}
+
+.menuActive.menu:hover{ 
+  border-bottom: 5px solid blue;
+}
+
+.table {
+  width: 100%;
+  color: white;
+}
+
+.table thead {
+  background: #CFA8FF;
+  color: black;
+}
+
+.table tr {
+  height: 60px;
+  
+}
+
+.navContainer {
+  display: flex;
+  padding-top: 98px;
+}
+
+.navItem{
+  font-size: 30px;
+  color: lightblue;
+  padding: 10px 20px;
+  margin: 5px 20px;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activeMenu {
+  color: blue;
+  border-color: blue;
+}
+
+.btnContainer {
+  display: flex;
+  padding: 0 20px;
+  margin: 10px auto;
+}
+
+.greenBtn {
+  font-size: 25px;
+  color: green;
+  border: 2px solid green;
+  border-radius: 5px;
+  background: transparent;
+}
+.input {
+  background: transparent;
+  color: white;
+  border: 2px solid #93FF9E;
+}
+
+.contentWrapper {
+  padding-top: 98px;
+  display: flex;
+}
+
+.content {
+  width: calc(100% - 200px);
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.delBtn {
+  background: #CFA8FF;
+  border-radius: 50px;
+  padding: 0 10px;
+}

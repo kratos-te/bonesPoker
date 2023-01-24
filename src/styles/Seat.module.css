@@ -1,0 +1,402 @@
+/* color from https://colors.dopely.top/palettes/3PCskjAz43T */
+/* https://colors.dopely.top/inside-colors/green-color-palette-inspirations-with-names-hex-codes/ */
+.darkGreen {
+  color: #476930;
+}
+
+.green {
+  color: #86b049;
+}
+
+.dirt {
+  color: #c8b88a;
+}
+
+.pink {
+  color: #f1dddf;
+}
+
+
+.cardPosition {
+  position: absolute;
+  top: -70px;
+}
+
+.playingSeat {
+  width: 220px;
+  text-align: center;
+  position: absolute;
+  height: 60px;
+  padding: 0 74px 0 24px;
+  border: 5px solid #93ff9e;
+  color: #fff;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  font-family: roboto;
+  font-size: 15px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.rightPlayingSeat {
+  padding: 0 24px 0 74px !important;
+}
+
+.dealMarkWrapper {
+  color: black;
+  position: absolute;
+  
+  right: 10px;
+  top: calc(100% - 10px);  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightDealMarkWrapper {
+  left: 10px !important;
+  right: auto !important;
+}
+
+.dealMark {
+  aspect-ratio: 1;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.bgColorPink {
+  background: #cfa8ff;
+}
+
+.bgColorGreen {
+  background: #93FF9E;
+}
+
+.bgColorYellow {
+  background: #FFD793;
+}
+
+.pfp {
+  margin: -5px;
+  height: calc(100% + 10px);
+  aspect-ratio: 1;
+  border: 5px solid white;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.rightPfp {
+  right: auto !important;
+  left: 0 !important;
+}
+
+.seat {
+  position: absolute;
+  height: 60px;
+  width: 220px;
+  border: 5px solid #93ff9e;
+  color: #fff;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  font-family: roboto;
+  font-size: 22px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+
+}
+
+.seatWithCards {
+  position: absolute;
+  color: #888888;
+  font-family: roboto;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seat:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.currentPlayerCardsContainer {
+  position: absolute;
+  top: -70px;
+  display: flex;
+  justify-content: center;
+  border: 6px solid red;
+  border-radius: 0.8rem;
+}
+
+.stackContainer {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed black;
+  background-color: white;
+}
+
+
+.lastAction {
+  position: absolute;
+  /* bottom: -110px; */
+  top: 65px;
+  /* background-color: #c8b88a; */
+  color: white;
+  background: black;
+  font-weight: bold;
+  border: 5px solid green;
+  padding: 5px 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.playerData {
+  display: flex;
+}
+
+.folded {
+  opacity: 0.7;
+}
+
+.winnerBanner {
+  position: absolute;
+  top: 65px;
+  padding: 5px 20px;
+  border-radius: 30px;
+  color: white;
+  background: transparent;
+  font-family: 'Roboto';
+  border: 5px solid #93ff9e;
+  font-weight: bold;
+  white-space: nowrap;
+
+  animation: 3s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+.lastActionWrapper {
+  display: flex;
+  position: absolute;
+  top: 65px;
+  color: white;
+  background: transparent;
+  font-family: 'Roboto';
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+}
+
+.lastActionItem {
+  border: 5px solid #93ff9e;
+  border-radius: 30px;
+  padding: 5px 20px;
+  background: transparent;
+}
+
+.bestHand {
+  position: absolute;
+  top: 65px;
+  padding: 5px 20px;
+  border-radius: 30px;
+  color: white;
+  background: black;
+  font-family: 'Roboto';
+  border: 5px solid #93ff9e;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.container {
+  display: block;
+}
+
+.winnerStack {
+  animation: 1s fadeIn;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1400px) {
+  .playingSeat {
+    width: 130px;
+    height: 40px;
+    font-size: 10px;
+    border-width: 2px;
+    letter-spacing: 2px;
+  }
+
+  .seat {
+    height: 40px;
+    width: 130px;
+    border-width: 2px;
+    font-size: 16px;
+  }
+
+  .currentPlayerCardsContainer {
+    top: -45px;
+  }
+
+  .cardPosition {
+    top: -40px;
+  }
+
+  .lastActionWrapper {
+    top: 45px;
+  }
+  
+  .lastActionItem {
+    border-width: 2px;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .bestHand {
+    top: 45px;
+    border-width: 2px;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .dealMarkWrapper {
+    right: 3px;
+  }
+
+  .winnerBanner {
+    top: 45px;
+    padding: 5px;
+    border-width: 2px;
+    font-size: 13px;
+  }
+
+  .rightDealMarkWrapper {
+    left: 5px !important;
+  }
+
+  .lastAction {
+    padding: 5px 10px;
+    border-width: 2px;
+    font-size: 13px;
+    top: 45px;
+  }
+}
+
+@media (max-width: 1000px) {
+  @media screen and (orientation: portrait) {
+    .playingSeat {
+      width: 130px;
+      height: 40px;
+      font-size: 10px;
+      border-width: 2px;
+      letter-spacing: 2px;
+    }
+
+    .cardPosition {
+      top: -30px;
+    }
+
+    .winnerBanner {
+      top: 45px;
+      padding: 5px 10px;
+      border-width: 2px;
+      font-size: 12px;
+    }
+
+    .lastAction {
+      top: 45px;
+      padding: 5px 10px;
+      border-width: 2px;
+      font-size: 12px;
+    }
+
+    .pfp {
+      margin: -2px;
+      height: calc(100% + 4px);
+      border-width: 2px;
+    }
+
+    .dealMarkWrapper {
+      left: auto;
+      right: 3px;
+      top: calc(100% - 10px);
+    }
+
+    .rightDealMarkWrapper {
+      right: auto !important;
+      left: 6px;
+    }
+
+    .dealMark {
+      padding: 0;
+      min-width: 20px;
+      min-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bestHand {
+
+      top: 45px;
+      padding: 5px 10px;
+      border-width: 2px;
+      font-size: 13px;
+    }
+
+    .lastActionWrapper {
+      top: 45px;
+    }
+    
+    .lastActionItem {
+      border-width: 2px;
+      padding: 5px;
+      font-size: 12px;
+    }
+  }
+}

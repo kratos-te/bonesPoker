@@ -1,0 +1,98 @@
+.container {
+  
+}
+
+.content {
+  padding-top: 98px;
+  display: flex;
+}
+
+.mainContent {
+  width: calc(100% - 200px);
+  
+}
+
+
+.main {
+  height: 100vh;
+  padding: 10rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title span {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.chooseTable {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.selectedTable {
+  font-size: 2em;
+  cursor: pointer;
+  display: block;
+  border: 1px dashed black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 0.25rem;
+  color: black;
+}
+
+.selectedTable:hover {
+  color: #0070f3;
+}
+
+.tableList {
+  display: list-item;
+  border: 1px dashed black;
+  border-radius: 0.5rem;
+}
+
+.menu {
+  cursor: pointer;
+  margin: 0 20px;
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+.menu:hover { 
+  border-bottom: 5px solid green;
+}
+
+.menuActive {
+  border-bottom: 5px solid blue;
+  font-weight: 900;
+}
+
+.menuActive.menu:hover{ 
+  border-bottom: 5px solid blue;
+}
+
+@media (max-width: 1000px) {
+  .content {
+    padding-top: 60px;
+    background: url('/img/bg.png');
+    min-height: 100vh;
+  }
+
+  .mainContent {
+    width: 100%;
+  }
+}

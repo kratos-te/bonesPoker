@@ -1,0 +1,648 @@
+.page {
+  height: 100vh;
+  /* background-color: #2a2829; */
+  background: url('/img/bg.png');
+  display: flex;
+  align-items: center;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  position: relative;
+}
+
+.table {
+  width: 65%;
+  height: 67%;
+  /* background: #39925e; */
+  background: radial-gradient(#389135, #1d521e);
+  border-radius: 270px;
+  border: 5px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.startGame {
+  position: absolute;
+  bottom: 5px;
+  right: 50px;
+  height: 10%;
+  width: 18%;
+  border: 1px solid white;
+  color: white;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  font-family: Mulish, sans-serif;
+  font-weight: 500;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.actionButtonsContainer {
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+}
+
+.presetRaisingBtnContainer {
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+}
+
+.actionBtn2 {
+  width: 130px;
+  background: #ffd793;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+.actionButton {
+  border: 5px solid white;
+  border-radius: 0.3rem;
+  /* padding: 1.2rem; */
+  font-family: Mulish, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: #2a2829;
+  letter-spacing: 0.3rem;
+  color: black;
+  margin: 2px;
+  user-select: none;
+  min-width: 10rem;
+  min-height: 5rem;
+  cursor: pointer;
+}
+
+.actionButton:active {
+  transform: scale(0.97);
+}
+
+.bgColorGreen1 {
+  background: #93FF9E !important;
+}
+
+.bgColorYellow1 {
+  background: #FFD793 !important;
+}
+
+.bgColorPink1 {
+  background: #FFAFAF !important;
+  color: black !important;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  bottom: 0;
+  right: 50px;
+  position: absolute;
+
+  z-index: 10;
+
+}
+
+.potsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  opacity: 0.6;
+  padding: 0 20px;
+  border-radius: 50px;
+}
+
+.pot {
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 10px;
+  /* padding-top: 10px; */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.tableBanner {
+  background: white;
+  opacity: 0.6;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 20px;
+  color: black;
+}
+
+.street {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 3rem;
+  margin-bottom: 0.5rem;
+  user-select: none;
+  color: black;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+.street2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 3rem;
+  margin-bottom: 0.5rem;
+  user-select: none;
+  color: black;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+.log {
+  font-size: 11px;
+  width: 330px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 150px;
+  color: white;
+  padding: 10px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  opacity: 0.7;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.log::-webkit-scrollbar {
+  width: 15px;
+}
+
+.log::-webkit-scrollbar-track {
+  background-color: darkgrey;
+  border-radius: 100px;
+}
+
+.log::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: black;
+  border-radius: 100px;
+}
+
+.log span {
+  background: #FFD793;
+  color: black;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 0 5px;
+}
+
+.logoWrapper {
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  cursor: pointer;
+  width: 74px;
+  height: 89px;
+}
+
+.rightTopMenu {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menuContentWrapper {
+  position: relative;
+  display: flex;
+}
+
+.menuItem {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: roboto;
+  font-size: 20px;
+  color: white;
+  background: black;
+  border: 5px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+.countdownLabel {
+  position: absolute;
+  top: 30px;
+  right: calc(50% - 30px);
+  font-size: 26px;
+  color: green;
+}
+
+.walletBtn {
+  position: absolute;
+  top: 0;
+  right: calc(50% - 30px);
+}
+
+.menuContent {
+  position: absolute;
+  border: 5px solid white;
+  border-radius: 10px;
+  top: 80px;
+  width: 100%;
+  right: 0;
+  left: 0;
+}
+
+.row {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-family: roboto;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.row:nth-child(2n) {
+  background: #000000;
+}
+
+.row:nth-child(2n-1) {
+  background: #323232;
+}
+
+.menu2Col {
+  display: flex;
+}
+
+.menu2Col>span:first-child {
+  width: 40%;
+  text-align: center;
+}
+
+.menu2Col>span:nth-child(2) {
+  width: 60%;
+}
+
+.dialogText {
+  color: white;
+  font-family: roboto;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.dialogBtn {
+  color: black;
+  text-transform: uppercase;
+  font-family: roboto;
+  font-size: 24px;
+  font-weight: bold;
+  border: 5px solid white;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 0 15px;
+}
+
+.logoImg {
+  width: 100%;
+}
+
+.mobileShow {
+  display: none;
+}
+
+
+.tableContainer>div:nth-child(2)>div {
+  top: 85%;
+  left: 70%;
+}
+
+.tableContainer>div:nth-child(3)>div {
+  top: 85%;
+  left: 50%;
+}
+
+.tableContainer>div:nth-child(4)>div {
+  top: 85%;
+  left: 30%;
+}
+
+.tableContainer>div:nth-child(5)>div {
+  top: 66%;
+  left: 15%;
+}
+
+.tableContainer>div:nth-child(6)>div {
+  top: 27%;
+  left: 15%;
+}
+
+.tableContainer>div:nth-child(7)>div {
+  top: 12%;
+  left: 30%;
+}
+
+.tableContainer>div:nth-child(8)>div {
+  top: 12%;
+  left: 50%;
+}
+
+.tableContainer>div:nth-child(9)>div {
+  top: 12%;
+  left: 70%;
+}
+
+.tableContainer>div:nth-child(10)>div {
+  top: 28%;
+  left: 85%;
+}
+
+.tableContainer>div:nth-child(11)>div {
+  top: 75%;
+  left: 85%;
+}
+
+@media (max-width: 1400px) {
+
+  .table {
+    width: 85%;
+    height: 70%;
+  }
+
+  .buttonGroup {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+  }
+
+
+
+  .actionButton {
+    height: 50px;
+    min-height: 50px;
+    /* line-height: 50px; */
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .log {
+    display: none;
+  }
+
+  .logoWrapper {
+    left: 20px;
+    width: 44px;
+    height: 50px;
+  }
+
+  .rightTopMenu {
+    right: 20px;
+  }
+
+  .menuItem {
+    width: 35px;
+    height: 35px;
+    border-width: 2px;
+  }
+
+  .pot {
+    height: 30px;
+  }
+
+  .tableContainer>div:nth-child(2)>div {
+    top: 85%;
+    left: 70%;
+  }
+
+  .tableContainer>div:nth-child(3)>div {
+    top: 85%;
+    left: 50%;
+  }
+
+  .tableContainer>div:nth-child(4)>div {
+    top: 85%;
+    left: 30%;
+  }
+
+  .tableContainer>div:nth-child(5)>div {
+    top: 80%;
+    left: 12%;
+  }
+
+  .tableContainer>div:nth-child(6)>div {
+    top: 27%;
+    left: 12%;
+  }
+
+  .tableContainer>div:nth-child(7)>div {
+    top: 18%;
+    left: 30%;
+  }
+
+  .tableContainer>div:nth-child(8)>div {
+    top: 18%;
+    left: 50%;
+  }
+
+  .tableContainer>div:nth-child(9)>div {
+    top: 18%;
+    left: 70%;
+  }
+
+  .tableContainer>div:nth-child(10)>div {
+    top: 27%;
+    left: 88%;
+  }
+
+  .tableContainer>div:nth-child(11)>div {
+    top: 80%;
+    left: 88%;
+  }
+
+}
+
+@media (max-width: 1000px) {
+
+
+  /* .logoImg {
+  
+  } */
+
+
+
+  .dialogText {
+    font-size: 16px;
+  }
+
+  .dialogBtn {
+    font-size: 16px;
+    border-width: 2px;
+  }
+
+  @media screen and (orientation: portrait) {
+    .tableContainer {
+      width: 100%;
+      height: calc(100% - 170px);
+    }
+
+
+    .table {
+      width: calc(100% - 70px);
+      height: calc(100% - 50px);
+    }
+
+    .actionButtonsContainer {
+
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .presetRaisingBtnContainer {
+
+      width: 100%;
+    }
+
+    .actionBtn2 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .actionButton {
+      min-width: auto;
+      width: 100%;
+      height: 40px;
+      min-height: 40px;
+      max-height: 40px;
+      padding: 0;
+      font-size: 10px;
+    }
+
+    .mobileShow {
+      display: block;
+    }
+
+    .tableContainer>div:nth-child(2)>div {
+      top: 91%;
+      left: 50%;
+    }
+
+    .tableContainer>div:nth-child(3)>div {
+      top: 87%;
+      left: 17%;
+    }
+
+    .tableContainer>div:nth-child(4)>div {
+      top: 62%;
+      left: 17%;
+    }
+
+    .tableContainer>div:nth-child(5)>div {
+      top: 38%;
+      left: 17%;
+    }
+
+    .tableContainer>div:nth-child(6)>div {
+      top: 13%;
+      left: 17%;
+    }
+
+    .tableContainer>div:nth-child(7)>div {
+      top: 0%;
+      left: 50%;
+    }
+
+    .tableContainer>div:nth-child(8)>div {
+      top: 13%;
+      left: 83%;
+    }
+
+    .tableContainer>div:nth-child(9)>div {
+      top: 38%;
+
+      left: 85%;
+    }
+
+    .tableContainer>div:nth-child(10)>div {
+      top: 62%;
+      left: 83%;
+    }
+
+    .tableContainer>div:nth-child(11)>div {
+      top: 87%;
+      left: 83%;
+    }
+  }
+
+
+}

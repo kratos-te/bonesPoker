@@ -1,0 +1,121 @@
+.dialogRow {
+    display: flex;  
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.alignCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 18px;
+    font-family: roboto;
+    color: white;
+    margin-right: 20px;
+}
+
+.inputUsername {
+    border: 3px solid #93ff9e;
+    width: 300px;
+    background: transparent;
+    color: white;
+}
+.pfp {
+    width: 300px;
+    height: 300px;
+    border: 3px solid #93ff9e;
+    cursor: pointer;
+}
+
+.userPfpIcon {
+width: 28px;
+height: 28px;
+border: 1px solid grey;
+border-radius: 50%;
+}
+
+.pfpImgContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 9px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pfpImgWrapper {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
+.pfpImg {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+.pfpActive {
+    border: 3px solid #93ff9e;
+}
+
+.icon {
+    margin-right: 20px;
+}
+
+.saveBtn {
+    height: 48px;
+    background: #93ff9e;
+    border: none;
+    padding: 0 20px;
+    margin: 30px auto 0;
+    border-radius: 24px;
+}
+
+.disable {
+    cursor: not-allowed;
+}
+
+@media (max-width: 1000px) {
+    .userPfpIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .pfpImgWrapper {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .pfpImg {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
+
+    .dialogRow {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .inputUsername {
+        width: 100%;
+    }
+
+    .pfp {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+}
+
+@media (max-width: 300px) {
+    .label {
+        font-size: 12px;
+    }
+}
+
